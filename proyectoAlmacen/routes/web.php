@@ -40,4 +40,4 @@ Route::view(uri: 'nosotros',view: 'nosotros')->name('nosotros');
 Route::get('/contactanos', [ContactanosController::class, 'index'])->name('contactanos.index');
 Route::post('/contactanos', [ContactanosController::class, 'store'])->name('contactanos.store');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');
+Route::get('/home', App\Http\Controllers\HomeController::class)->name('home')->middleware('auth');
