@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Route;
 use App\Mail\ContactanosMailable;
 use Illuminate\Support\Facades\Mail;
 
+
 Route::get('/', HomeController::class)->name(name: 'home');
 
 // Autenticación
@@ -34,8 +35,9 @@ require __DIR__.'/auth.php';
 
 // Rutas para el controlador Institucion usando Route::resource
 Route::resource('institucion', InstitucionController::class);
-Route::view('nosotros','nosotros')->name('nosotros');
+Route::view(uri: 'nosotros',view: 'nosotros')->name('nosotros');
 
 Route::get('/contactanos', [ContactanosController::class, 'index'])->name('contactanos.index');
 Route::post('/contactanos', [ContactanosController::class, 'store'])->name('contactanos.store');
 
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');

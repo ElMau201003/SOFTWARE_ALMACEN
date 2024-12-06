@@ -322,9 +322,45 @@ return [
         ],
         [
             'text' => 'Dashboard',
+            'url' => '/dashboard',
+        'icon' => 'fas fa-tachometer-alt',
         ],
 
+        [
+            'text' => 'Institución',
+            'icon' => 'fas fa-university',
+            'submenu' => [
+                [
+                    'text' => 'Ver todas',
+                    'url' => 'institucion',
+                    'icon' => 'fas fa-list',
+                ],
+                [
+                    'text' => 'Crear nueva',
+                    'url' => 'institucion/create',
+                    'icon' => 'fas fa-plus-circle',
+                ],
+            ],
+        ],
+    
+        [
+            'text' => 'Contáctanos',
+            'url' => 'contactanos',
+            'icon' => 'fas fa-envelope',
+        ],
 
+        [
+            'text' => 'Nosotros',
+            'url' => 'nosotros',
+            'icon' => 'fas fa-users',
+        ],
+        
+        [
+            'type' => 'fullscreen-widget',
+            'topnav_right' => true,
+        ],
+
+        
         [
             'text' => 'pages',
             'url' => 'admin/pages',
